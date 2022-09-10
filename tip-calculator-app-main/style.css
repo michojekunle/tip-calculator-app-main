@@ -187,3 +187,11 @@ label {
     display: flex;
     justify-content: space-between;
 }
+
+@media screen  and (max-width: 550px) {
+    .app {
+        flex-direction: column;
+        height: auto;
+        max-height: 700px;
+    }
+}
