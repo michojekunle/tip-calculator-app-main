@@ -26,16 +26,7 @@ inputs.forEach((input, index) => {
 tips.forEach((tip, index) => {
     tip.addEventListener('click', () => {
         tips.forEach(tip => tip.classList.remove('selected-tip'))
-        if(index !== tips.length-1 ){
             tip.classList.toggle('selected-tip');
-            tipval = tip.innerText;
-            console.log(index)
-        }
-        else {
-            tip.style.textAlign = 'right';
-            tip.innerText = '';
-            tip.style.paddingRight = '10px';
-        } 
         calculateTip()
     })
 })
@@ -45,30 +36,31 @@ function calculateTip() {
     let bill = document.querySelector('.bill .input input').value;
     let people = document.querySelector('.people .input input').value;
     let tipval; 
-    tips.forEach(tip => {
+    tips.forEach((tip, index) => {
         if(tip.classList.contains('selected-tip')){
-            tipval = tip.innerText;
+            tipval = parseInt(tip.innerText);
             console.log(tipval);
+            console.log(tipval, tip.value);
+            if(index === tips.length-1){
+                tipval = parseInt(tip.value);
+            }
         }
     })
 
     let tipAmount, totalAmount;
 
-    if(tipval.includes('%')){
-        tipval.replace('%', '');
-        tipval = parseInt(tipval);
-        console.log(tipval)
-    }
     bill = parseFloat(bill);
     people = parseFloat(people);
+    console.log(tipval)
     console.log(bill, people, tipval);
 
     tipAmount = ((bill* tipval/100)/people).toFixed(2);
     totalAmount = ((bill + (bill* tipval/100))/people).toFixed(2);
 
-    tipAmountEl.innerText = `$${tipAmount}`;
-    totalAmountEl.innerText = `$${totalAmount}`;
+    tipAmountEl.innerText = `$${tipAmount === NaN? 0.00 : tipAmount}`;
+    totalAmountEl.innerText = `$${totalAmount === NaN ? 0.00 : totalAmount}`;
 }
+
 
 calculateTip();
 

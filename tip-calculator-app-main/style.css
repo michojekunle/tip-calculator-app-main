@@ -120,7 +120,7 @@ label {
     transition: all .4s ease;
 }
 
-.select-tip .tips .tip:last-of-type {
+.select-tip .tips input.tip{
     color: var(--dark-grayish-cyan);
     background: var(--very-light-grayish-cyan);
 }
