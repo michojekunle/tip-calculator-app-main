@@ -3,6 +3,7 @@ const warning = document.getElementById('warning-text');
 const tips = document.querySelectorAll('.tip');
 const totalAmountEl = document.getElementById('total-amount');
 const tipAmountEl = document.getElementById('tip-amount');
+const resetButton = document.getElementById('reset-button')
 
 inputs.forEach((input, index) => {
     console.log(input)
@@ -56,11 +57,20 @@ function calculateTip() {
 
     tipAmount = ((bill* tipval/100)/people).toFixed(2);
     totalAmount = ((bill + (bill* tipval/100))/people).toFixed(2);
+    console.log(typeof tipAmount, typeof totalAmount)
 
-    tipAmountEl.innerText = `$${tipAmount === NaN? 0.00 : tipAmount}`;
-    totalAmountEl.innerText = `$${totalAmount === NaN ? 0.00 : totalAmount}`;
+    tipAmountEl.innerText = `$${tipAmount === 'NaN' ? 0.00 : tipAmount}`;
+    totalAmountEl.innerText = `$${totalAmount === 'NaN' ? 0.00 : totalAmount}`;
 }
 
+resetButton.addEventListener('click', () => {
+    tips.forEach(tip => tip.classList.remove('selected-tip'));
+    tips[2].classList.add('selected-tip');
+    document.querySelector('.bill .input input').value = 0.00;
+    document.querySelector('.people .input input').value = 1;
+    
+    calculateTip();
+})
 
 calculateTip();
 
