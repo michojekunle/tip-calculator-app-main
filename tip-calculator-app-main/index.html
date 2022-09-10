@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; background: hsl(184, 14%, 56%); padding: 12px 0;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Spli</h1>
+      <h1>tter</h1>
+    </header>
+    <div class="app">
+      <div class="input-container">
+        <div class="bill">
+          <label for="bill">Bill</label>
+          <div class="input">
+            <img src="./images/icon-dollar.svg" alt="">
+            <input type="number" value="142.55">
+          </div>
+        </div>
+        <div class="select-tip">
+          <label for="tips">Select Tip %</label>
+          <div class="tips">
+            <button class="tip">5%</button>
+            <button class="tip">10%</button>
+            <button class="tip selected-tip">15%</button>
+            <button class="tip">25%</button>
+            <button class="tip">50%</button>
+            <button class="tip" contenteditable="true" >Custom</button>
+          </div>
+        </div>
+        <div class="people">
+          <label for="people"><span>Number of People </span> <small id="warning-text" style="color: red"></small></label>
+          <div class="input">
+            <img src="./images/icon-person.svg" alt="">
+            <input type="number" value="5">
+          </div>
+        </div>
+      </div>
+      <div class="output">
+        <div>
+          <div class="tip-amount">
+            <div class="label">
+              <p>Tip Amount</p>
+              <small>/ person</small>
+            </div>
+            <div id="tip-amount" class="amount">
+              $4.27
+            </div>
+          </div>
+          <div class="total">
+            <div class="label">
+              <p>Total</p>
+              <small>/ person</small>
+            </div>
+            <div id="total-amount" class="amount">
+              $32.79
+            </div>
+          </div>
+        </div>
+        <button>RESET</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/michojekunle" target="_blank">AMD</a>.
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

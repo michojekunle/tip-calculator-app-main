@@ -1,0 +1,189 @@
+:root {
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --strong-cyan: hsl(172, 67%, 45%);
+}
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+body {
+    font-size: 62.5%;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem 1rem;
+    background-color: var(--light-grayish-cyan);
+    box-shadow: 0 0 8px rgba(0 0 0 .9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    color: var(--dark-grayish-cyan);
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+}
+
+.app {
+    width: 90%;
+    max-width:550px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    height: 60vh;
+    min-height: auto;
+    max-height: 280px;
+}
+
+.input-container, .output {
+    flex: 1;
+}
+
+label {
+    color: var(--dark-grayish-cyan);
+    font-size: .7rem;
+}
+
+.bill, .select-tip{
+    margin-bottom: 1.35rem;
+}
+
+.bill .input, .people .input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--very-light-grayish-cyan);
+    padding: 3px 12px;
+    margin: .5rem 0;
+}
+
+.bill .input img, .people .input img {
+    width: .5rem;
+}
+
+.bill .input input, .people .input input {
+    text-align: right;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: var(--very-dark-cyan);
+}
+
+.select-tip .tips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-top: .5rem;
+    width: 100%;
+}
+
+.select-tip .tips .tip {
+    border: none;
+    outline: none;
+    width: 5rem;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 4px;
+    color: var(--white);
+    background: var(--very-dark-cyan);
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.select-tip .tips .tip:last-of-type {
+    color: var(--dark-grayish-cyan);
+    background: var(--very-light-grayish-cyan);
+}
+
+.select-tip .tips .tip:hover {
+    color: var(--very-dark-cyan);
+    background: var(--light-grayish-cyan);
+}
+
+.select-tip .tips .tip.selected-tip {
+    background-color: var(--strong-cyan);
+}
+
+.output {
+    background-color: var(--very-dark-cyan);
+    border-radius: 12px;
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    align-self: stretch;
+}
+
+.output .tip-amount, .output .total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.output .tip-amount .label , .output .total .label{
+    color: var(--white);
+}
+
+.output .tip-amount .label small, .output .total .label small {
+    color: var(--light-grayish-cyan);
+    opacity: .7;
+}
+
+.output .tip-amount .amount, .output .total .amount{
+    font-size: 1.7rem;
+    color: var(--strong-cyan);
+}
+
+.output button {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    border: none;
+    border-radius: 4px;
+    padding: 7px;
+    text-transform: uppercase;
+}
+
+.output button:hover {
+    background-color: var(--light-grayish-cyan);
+}
+
+.output button:active {
+    transform: scale(1.02);
+}
+
+.people label {
+    display: flex;
+    justify-content: space-between;
+}
